@@ -71,6 +71,32 @@ This provides a simulated emergency priority system.
 
 **Traffic Signals + Emergency Button → Arduino → Decision Making → LED Signals**
 
+## 🏗️ System Architecture
+
+```text
+                 ┌─────────────────────┐
+                 │   Emergency Button  │
+                 └──────────┬──────────┘
+                            │
+                            ▼
+┌──────────────────────────────────────────────┐
+│                  Arduino Uno                 │
+│                                              │
+│  Reads button input and controls traffic     │
+│  signals based on the current traffic phase. │
+└───────────────┬──────────────────────────────┘
+                │
+        ┌───────┴────────┐
+        ▼                ▼
+┌──────────────┐  ┌──────────────┐
+│   Road 1     │  │    Road 2    │
+│ R/Y/G LEDs   │  │  R/Y/G LEDs   │
+└──────────────┘  └──────────────┘
+This architecture demonstrates the interaction between the emergency input, Arduino controller, and two traffic signal units.
+This architecture demonstrates the interaction between the emergency input, Arduino controller, and two traffic signal units.
+
+```
+
 ## 📸 Circuit
 
 ### Normal Traffic Operation
